@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,10 +16,11 @@
     <!-- slider angular-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.js"></script>
     <script src="https://rawgit.com/rzajac/angularjs-slider/master/dist/rzslider.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/rzslider.css">
     <!--
 <script src="js/rangeslider.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://rawgit.com/rzajac/angularjs-slider/master/dist/rzslider.css"> -->
-    <script type="text/javascript" src='//rawgithub.com/prajwalkman/angular-slider/master/angular-slider.js'  charset="utf-8"></script>
+    -->
+    <script type="text/javascript" src='https://rawgithub.com/prajwalkman/angular-slider/master/angular-slider.js'  charset="utf-8"></script>
     <link rel="stylesheet" type="text/css" href="css/angular-slider.css">
 
 
@@ -40,6 +41,8 @@
     <script src="js/typed.js"></script>
     <script src="js/jquery.sticky.js"></script>
     <script src="js/angular-fusioncharts.min.js"></script>
+    <script src="js/fusioncharts.js"></script>
+    <script src="js/fusioncharts.theme.fint.js"></script>
     <script>
     $(window).load(function(){
       $("#sticker").sticky({ topSpacing: 0, center:true, className:"hey" });
@@ -155,59 +158,40 @@
             }
         };
 </script>
-<!--
-<script type="text/javascript">
-$(function () {
-
-    $(document).ready(function () {
-
-        // Build the chart
-        Highcharts.chart('chartpie', {
-            chart: {
-                plotBackgroundColor: null,
-                plotBorderWidth: null,
-                plotShadow: false,
-                type: 'pie'
-            },
-            title: {
-                text: ''
-            },
-            tooltip: {
-                pointFormat: '{series.name}: <b>{point.percentage:.1f}</b>'
-            },
-            plotOptions: {
-                pie: {
-                    allowPointSelect: true,
-                    cursor: 'pointer',
-                    dataLabels: {
-                        enabled: false
-                    },
-                    showInLegend: false
-                }
-            },
-            series: [{
-                name: 'Proyectos',
-                colorByPoint: true,
-                data: [{
-                    name: 'Medio',
-                    y: 23
-                }, {
-                    name: 'text',
-                    y: 77,
-                    sliced: true,
-                    selected: true
-                }]
-            }]
-        });
-    });
+        <script type="text/javascript">
+  FusionCharts.ready(function(){
+    var fusioncharts = new FusionCharts({
+    type: 'pie2d',
+    renderAt: 'chart-container',
+    width: '450',
+    height: '300',
+    dataFormat: 'json',
+    dataSource: {
+        "chart": {
+            "caption": "",
+            "subCaption": "",
+            "numberPrefix": " ",
+            "showPercentInTooltip": "0",
+            "decimals": "1",
+            "useDataPlotColorForLabels": "1",
+            //Theme
+            "theme": "fint"
+        },
+        "data": [{
+            "label": "Medio",
+            "value": "23"
+        }, {
+            "label": "Other option",
+            "value": "32"
+        }]
+    }
+}
+);
+    fusioncharts.render();
 });
-        </script>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-        -->
+</script>
 </head>
-<body ng-app="myApp">
-  <div ng-controller="MyCtrl">
+<body ng-controller="MyCtrl">
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -284,7 +268,7 @@ $(function () {
                         <li>Los miembros del equipo cuentan con más de 35 años de experiencia operatva, financiera, estratétiga y técnica probada en el sector, además de sólidas relaciones con desarrrolladores y acceso a las zonas más pometedoras del país.</li>
                     </span>
 
-                    <ul clearfix style="padding: 0px;">
+                    <ul clearfix" style="padding: 0px;">
                                 <li class="col-md-6 col-lg-5ths" ng-repeat="person in people">
 
                                     <div class="trPic">
@@ -326,30 +310,10 @@ $(function () {
     <section style="padding: 34px 80px;">
     <div class="col-sm-6 col-lg-6" id="canvas">
             <div id="paper" style="zoom: 0.7;"></div>
-            <!--
-            <div id="ags">
-                <h2>Aguascalientes</h2>
-                <p>
-                    La tierra de la gente buena :D.
-                </p>
-            </div>
-            <div id="bcn">
-                <h2>Baja California Norte</h2>
-                <p>
-                    Aaaam #Tijuana xdxd.
-                </p>
-            </div>
-            <div id="bcs">
-                <h2>Baja california sur</h2>
-                <p>
-                    Migración de ballenas :3
-                </p>
-            </div> -->
         </div>
         <!--
-                <div class="col-sm-6 col-lg-6" style="background-color: white;">
                     <object data="img/mexicoHigh.svg" type="image/svg+xml" width="100%" height="900px"></object>
-                </div>
+
                 -->
                 <div class="col-sm-6 col-lg-6" style="background-color: white;">
                     <div style="width: 8px; height: 450px; background-color: #EA9847; float: left; margin-left: 100px"> </div>
@@ -396,27 +360,17 @@ $(function () {
                     </div>
                 </div>
                 <div class="col-sm-12 col-lg-6">
-                <div fusioncharts
-               width="600"
-               height="400"
-               type="column2d"
-               dataSource="" >
-            </div>
+                <div id="chart-container">Gráfica</div>
                 </div>
-               <!--
-                    <canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels" chart-options="options">
-                    </canvas>
-               <div id="chartpie" class="col-sm-12 col-lg-6" style="height: 400px; max-width: 600px; background-color: #E5E5E5"></div> -->
-
         </section>
 
 
 
     <div class="container-search">
-        <!--
+
         <section class="empiezainv">
             <h1>EMPIEZA A INVERTIR</h1>
-        </section> -->
+        </section>
 
         <section>
             <ul>
@@ -427,7 +381,7 @@ $(function () {
                                         </button>
                         </li>
                         <li class="col-sm-12 col-md-4 col-lg-4 lsn">
-                        <h4>TIPO DE PROPIEDAD</h4>
+                        <h4>TIPO DE PROYECTO</h4>
                                         <button type="button" class="btn btn-default" ng-model="selectedtipopropiedad" data-html="1" data-multiple="1" data-animation="am-flip-x" bs-options="proyecto.tipopropiedad as proyecto.tipopropiedad for proyecto in proyectos | unique:'tipopropiedad'" bs-select>
                                           Action <span class="caret"></span>
                                         </button>
@@ -435,23 +389,16 @@ $(function () {
                         </li>
                         <li class="col-sm-12 col-md-4 col-lg-4 lsn">
                         <h4>RANGO DE PRECIO</h4>
+                            <!--
                             <slider floor="0" ceiling="5000000" ng-model-low="lower_price_bound" ng-model-high="upper_price_bound"></slider>
-                        </li>
-                    </ul>
-                <!--
-                        <table>
-                          <thead>
-                            <th>Rango</th>
-                          </thead>
-                          <tbody>
-                            <tr ng-repeat='item in proyectos|filter:priceRange'>
-                              <td>{{item.rangoprecio}}</td>
-                            </tr>
-                          </tbody>
-                        </table>
+                            -->
                             <rzslider rz-slider-model="minRangeSlider.minValue" rz-slider-high="minRangeSlider.maxValue" rz-slider-options="minRangeSlider.options"></rzslider>
-                        <div range-slider="" prevent-equal-min-max="" attach-handle-values="" step="{{sliderConfig.step}}" min="runSliderConfig.min" max="runSliderConfig.max" model-min="sliderRanges.runMin" model-max="sliderRanges.runMax" filter="hourMinFilter" filter-options="{{runSliderConfig.max}}"></div>
-                        -->
+                        </li>
+
+
+                       <!-- <div range-slider="" prevent-equal-min-max="" attach-handle-values="" step="{{sliderConfig.step}}" min="runSliderConfig.min" max="runSliderConfig.max" model-min="sliderRanges.runMin" model-max="sliderRanges.runMax" filter="hourMinFilter" filter-options="{{runSliderConfig.max}}"></div> -->
+                    </ul>
+
         </section>
     </div>
 
@@ -464,7 +411,7 @@ $(function () {
                                 <ul class="da-thumbs clearfix">
 
 
-                                <li class="col-lg-4 col-sm-6" ng-repeat="proyecto in proyectos | filterMultiple:{locacion:selectedlocacion,tipopropiedad:selectedtipopropiedad} | filter:priceRange">
+                                <li class="col-lg-4 col-sm-6" ng-repeat="proyecto in proyectos | filterMultiple:{locacion:selectedlocacion,tipopropiedad:selectedtipopropiedad} | filter:filterrange">
                                     <a href="img/portfolio/{{proyecto.img}}" id="da-thumbs" class="portfolio-box">
                                       <img ng-src="img/portfolio/{{proyecto.img}}" class="img-responsive">
                                       <div><span><i class="fa fa-eye" aria-hidden="true"> Más Información</i></span></div>
@@ -514,7 +461,7 @@ $(function () {
                 <div class="col-sm-12 col-lg-4 text-center prg6">
                 <p class="pfooter">Dirección completa #984 Ciudad de México, México.</p>
                 <p class="brandpurple" href="#page-top">
-                    FM1<!-- <img style="width: 40%" src="img/logo2-03.png"> -->
+                    FM1
                 </p>
                 </div>
                 <div class="col-sm-12 col-lg-4 text-center prg6">
@@ -538,16 +485,6 @@ $(function () {
 
       });
     </script>
-    <!--
-    <script type="text/javascript">
-      $(function() {
-
-        $(' #da-thumbs2').each( function() { $(this).hoverdir(); } );
-
-      });
-    </script>
-    -->
-
     <!-- Bootstrap Core JavaScript -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
@@ -558,6 +495,5 @@ $(function () {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
     <!-- Theme JavaScript -->
     <script src="js/creative.js"></script>
-  </div>
 </body>
 </html>

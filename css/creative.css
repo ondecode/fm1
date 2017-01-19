@@ -228,7 +228,7 @@ aside {
   font-size: 12px;
 }
 .trPic{ width:auto; 
-  background: url(../img/casamuestra.jpg) no-repeat; 
+  background: url(../img/fondo7.jpg) no-repeat; 
 }
 .trPic .redO{ position:relative; 
   top:0px; 
@@ -294,7 +294,7 @@ aside {
     color: #939393;
     position: relative;
     text-align: center;
-    padding: 0px;
+    padding: 14px;
     margin: 0 auto;
     width: 30%;
     border-top-left-radius: 10px;

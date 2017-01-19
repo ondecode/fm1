@@ -3,33 +3,8 @@ var myApp = angular.module('myApp',['rzModule', 'ngAnimate', 'ngSanitize', 'mgcr
 //myApp.directive('myDirective', function() {});
 //myApp.factory('myService', function() {});
 
-myApp.controller('MyCtrl',['$scope',function ($scope) {
-$scope.myDataSource = {
-                chart: {
-                    caption: "Harry's SuperMart",
-                    subCaption: "Top 5 stores in last month by revenue",
-                },
-                data:[{
-                    label: "Bakersfield Central",
-                    value: "880000"
-                },
-                {
-                    label: "Garden Groove harbour",
-                    value: "730000"
-                },
-                {
-                    label: "Los Angeles Topanga",
-                    value: "590000"
-                },
-                {
-                    label: "Compton-Rancho Dom",
-                    value: "520000"
-                },
-                {
-                    label: "Daly City Serramonte",
-                    value: "330000"
-                }]
-              };
+myApp.controller('MyCtrl',['$scope', '$filter', function ($scope, $filter) {
+
 /*
 $scope.runSliderConfig = {
      min:  0,
@@ -46,28 +21,26 @@ $scope.runSliderConfig = {
      runMax: 120,
      swimMin: 0,
      swimMax: 120
-   };
+   }; */
     $scope.minRangeSlider = {
         minValue: 0,
         maxValue: 5000000,
         options: {
             floor: 0,
             ceil: 5000000,
-            step: 100000
+            step: 100000,
+          translate: function(value){
+              return $filter('currency')(value, "$", 0);
+            }
         }
     };
-    */
-    $scope.test = "Yes";
-      $scope.items = [
-                  {name: "item 1", 
-                  "min_price": "10",
-                  "max_price": "50"
-                  },
-                  
-                  {name: "item 2", "min_price": "5",
-                  "max_price": "40"},
-                  {name: "item 3", "min_price": "15",
-                  "max_price": "30"}];
+
+  $scope.filterrange = function(item) {
+    /*
+    console.log('item.min_price: ' + item.min_price);
+    console.log('$scope.lower_price_bound: ' + $scope.lower_price_bound); */
+    return (item.rangoprecio >= $scope.minRangeSlider.minValue && item.rangoprecio <= $scope.minRangeSlider.maxValue);
+  };
 
   $scope.priceRange = function(item) {
     /*
@@ -75,6 +48,7 @@ $scope.runSliderConfig = {
     console.log('$scope.lower_price_bound: ' + $scope.lower_price_bound); */
     return (item.rangoprecio >= $scope.lower_price_bound && item.rangoprecio <= $scope.upper_price_bound);
   };
+    $scope.test = "Yes";
     $scope.proyectos = [
       {
         "locacion" : "Querétaro, México.",
@@ -223,8 +197,8 @@ myApp.filter('unique', function() {
 });
 
 
-
 /*
+
 myApp.filter('hourMinFilter', function () {
   return function (value) {
     if (value === 120) return 'All'
