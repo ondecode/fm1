@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -206,7 +206,8 @@ $(function () {
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
         -->
 </head>
-<body ng-controller="MyCtrl">
+<body ng-app="myApp">
+  <div ng-controller="MyCtrl">
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -247,7 +248,7 @@ $(function () {
         <header>
             <div class="header-content">
                 <div class="header-content-inner">
-                    <h1 id="homeHeading">Rendimientos atractivos </h1> 
+                    <h1 id="homeHeading">Rendimientos atractivos </h1>
                 <div class="element"></div>
                     <a href="#about" class="btn btn-primary btn-xl page-scroll">Saber Más</a>
                 </div>
@@ -257,7 +258,7 @@ $(function () {
 
 
         <section class="bg-primary" id="about">
-        
+
 
                         <div class="container" ng-hide="hidesection">
                        <!-- <div id="project01" class="project"> -->
@@ -273,7 +274,7 @@ $(function () {
                         </div>
             </section>
 
-        
+
 
     <section class="padd">
                     <h3 style="color: #00CC77; font-weight: bold;">EQUIPO DIRECTIVO</h3>
@@ -283,14 +284,14 @@ $(function () {
                         <li>Los miembros del equipo cuentan con más de 35 años de experiencia operatva, financiera, estratétiga y técnica probada en el sector, además de sólidas relaciones con desarrrolladores y acceso a las zonas más pometedoras del país.</li>
                     </span>
 
-                    <ul clearfix" style="padding: 0px;">
+                    <ul clearfix style="padding: 0px;">
                                 <li class="col-md-6 col-lg-5ths" ng-repeat="person in people">
-                                    
-                                    <div class="trPic"> 
+
+                                    <div class="trPic">
                                         <div class="redO">
                                         <p>Rol: {{person.inforol}}</p>
                                         <p>Experiencia Profesional: {{person.infopro}}</p>
-                                        <p>Experiencia en el sector: {{person.infosec}}</p> 
+                                        <p>Experiencia en el sector: {{person.infosec}}</p>
                                         </div>
                                     </div>
 
@@ -303,10 +304,10 @@ $(function () {
                                       </span></div>
                                       -->
                                 </li>
-                                            
+
 
                                 <h3 style="font-weight: bold; color: #ECAB69" >COMITÉ DE INVERSIÓN ADMINISTRADOR</h3>
-                                
+
                                 <div class="col-md-6 col-lg-5ths" ng-repeat="person in people">
                                     <div class="boxsize">
                                     <p style="font-weight: bold; margin: 0 auto; text-align: center;">{{person.name}}</p>
@@ -361,7 +362,7 @@ $(function () {
 
                 </div>
     </section>
-    
+
         <section class="infoprg4 col-sm-12 col-lg-12">
                 <span class="prg4">Oportunidad en el Sector Inmobiliario</span><br>
                 <div style= "margin: 0px; background-color: #E5E5E5;" class="col-sm-12 col-lg-6">
@@ -402,21 +403,21 @@ $(function () {
                dataSource="" >
             </div>
                 </div>
-               <!-- 
+               <!--
                     <canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels" chart-options="options">
-                    </canvas> 
+                    </canvas>
                <div id="chartpie" class="col-sm-12 col-lg-6" style="height: 400px; max-width: 600px; background-color: #E5E5E5"></div> -->
 
         </section>
 
-     
+
 
     <div class="container-search">
         <!--
         <section class="empiezainv">
             <h1>EMPIEZA A INVERTIR</h1>
         </section> -->
-        
+
         <section>
             <ul>
                     <li class="col-sm-12 col-md-4 col-lg-4 lsn">
@@ -429,15 +430,15 @@ $(function () {
                         <h4>TIPO DE PROPIEDAD</h4>
                                         <button type="button" class="btn btn-default" ng-model="selectedtipopropiedad" data-html="1" data-multiple="1" data-animation="am-flip-x" bs-options="proyecto.tipopropiedad as proyecto.tipopropiedad for proyecto in proyectos | unique:'tipopropiedad'" bs-select>
                                           Action <span class="caret"></span>
-                                        </button> 
-                                
+                                        </button>
+
                         </li>
                         <li class="col-sm-12 col-md-4 col-lg-4 lsn">
                         <h4>RANGO DE PRECIO</h4>
                             <slider floor="0" ceiling="5000000" ng-model-low="lower_price_bound" ng-model-high="upper_price_bound"></slider>
                         </li>
                     </ul>
-                <!--    
+                <!--
                         <table>
                           <thead>
                             <th>Rango</th>
@@ -515,7 +516,7 @@ $(function () {
                 <p class="brandpurple" href="#page-top">
                     FM1<!-- <img style="width: 40%" src="img/logo2-03.png"> -->
                 </p>
-                </div>  
+                </div>
                 <div class="col-sm-12 col-lg-4 text-center prg6">
                 <img class="icons" src="img/portfolio/social-facebook-circle-128.png">
                 <img class="icons" src="img/portfolio/twitter.png">
@@ -528,7 +529,7 @@ $(function () {
                     </section>
                 </div>
     </div>
-    
+
               <script type="text/javascript" src="js/jquery.hoverdir.js"></script>
     <script type="text/javascript">
       $(function() {
@@ -557,5 +558,6 @@ $(function () {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
     <!-- Theme JavaScript -->
     <script src="js/creative.js"></script>
+  </div>
 </body>
 </html>
