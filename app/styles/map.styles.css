@@ -1,0 +1,28 @@
+#ags, #bcn, #bcs, #cam, #chp, #chh, #coa, #col, #df, #dur, #gua, #gro, #hid, #jal, #mex, #mic, #mor,
+#nay, #nl, #oax, #pue, #que, #qro, #slp, #sin, #son, #tab, #tam, #tla, #ver, #yuc, #zac {
+    display: none;
+    height: 400px;
+    overflow: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 370px;
+    margin-top: 50px;
+    /*margin: 50px -600px 0 -50px;*/
+}
+
+.borde{
+    width: 10px;
+    height: 510px;
+    background-color: #ea9847;
+    margin: 50px 0px 0px 800px;
+    /*margin: 50px -600px 0 -50px;*/
+}
+
+h2{
+    color: #5c3082;
+}
+
+p{
+    color: #a5a5ae;
+}
