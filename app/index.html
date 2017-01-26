@@ -14,7 +14,6 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/mybootstrap.css">
     <link rel="stylesheet" href="styles/creative.css">
     <link rel="stylesheet" href="styles/map.styles.css">
@@ -148,9 +147,9 @@
                         </ul>
                     -->
 
-                    <section class="row related tri"><!-- .related -->
-                        <article class="col-sm-12 col-md-6 col-lg-5ths" ng-repeat="person in people"><!-- .large-4.columns -->
-                            <div class="related-border">
+                    <section class="related container"><!-- .related -->
+                        <article ng-repeat="person in people"><!-- .large-4.columns -->
+                            <div class="related-border col-sm-12 col-md-6 col-lg-5ths">
                                 <a class="img" title="{{person.name}}" data-original="#">
                                     <span class="gradient"><img ng-src="images/people/{{person.img}}" alt="team-member" style="zoom: 0.6; width: 100%; height: 100%;"></span>
                                 </a>
@@ -182,10 +181,13 @@
                                       <img ng-src="img/people/{{person.img}}" class="img-responsive">
                                       </span></div>
                                 </li>
+                    </ul>
                                       -->
                                             
+    </section>
+                            <section class="padd">
 
-                                <h3 style="font-weight: bold; color: #ECAB69" >COMITÉ DE INVERSIÓN ADMINISTRADOR</h3>
+                                <h3 style="font-weight: bold; color: #ECAB69; clear: both;" >COMITÉ DE INVERSIÓN ADMINISTRADOR</h3>
                                 
                                 <div class="col-md-6 col-lg-5ths" ng-repeat="person in people">
                                     <div class="boxsize">
@@ -193,8 +195,7 @@
                                     <p style="margin: 0 auto; color: #00CC77; text-align: center;">{{person.puesto}}</p>
                                     </div>
                                 </div>
-                    </ul>
-    </section>
+                            </section>
 
     <section class="moreexp">
                 <h5 class="expletter">El equipo cuenta con una sólida trayectoria en el mercado </h5>

@@ -55,10 +55,7 @@ p {
   margin-bottom: 9px;
 }
 .typed-cursor{
-    opacity: 1;
-    -webkit-animation: blink 0.7s infinite;
-    -moz-animation: blink 0.7s infinite;
-    animation: blink 0.7s infinite;
+    opacity: 0;
 }
 @keyframes blink{
     0% { opacity:1; }
@@ -153,6 +150,12 @@ aside {
 }
 
 /* Cambios FM1 */
+.element{
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 30px;
+}
 .chartsize{
   padding: 50px 150px;
 }
@@ -770,12 +773,7 @@ header .header-content .header-content-inner p {
   font-size: 16px;
   margin-bottom: 50px;
 }
-.element{
-  font-weight: 700;
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 30px;
-}
+
 @media (min-width: 768px) {
   header {
     min-height: 100%;
@@ -1117,7 +1115,7 @@ color:#fff;padding:24px}
 /* new css*/
 .related>article>.related-border{
   display:block;height:auto;
-  width: 228px;
+  width: auto;
   margin: 20px 0px;
   position:relative;overflow:hidden;
   -webkit-transition:.3s;-moz-transition:.3s;
@@ -1152,7 +1150,7 @@ color:#fff;padding:24px}
 }
 
 @media only screen and (max-width: 529px){
-          .related>article>.related-border>p{
+.related>article>.related-border>p{
             font-size:.7rem}}
 
 .related>article .related-title,.related>article .related-meta{
