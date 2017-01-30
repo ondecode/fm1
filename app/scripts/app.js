@@ -9,7 +9,7 @@
  * Main module of the application.
  */
 
-var fm1App = angular.module('fm1App', [
+var app = angular.module('app', [
     'rzModule',
     'ngAnimate',
     'ngAria',
@@ -26,24 +26,20 @@ var fm1App = angular.module('fm1App', [
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/');
-
     $stateProvider
       .state('main', {
         url: '/',
-        templateUrl: '../../index.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
       })
       .state('about', {
         url: '/about',
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+        templateUrl: '/views/about.html',
+        controller: 'AboutCtrl'
       });
   });
 
-  fm1App.controller('MyCtrl',['$scope', '$filter', function ($scope, $filter) {
+  app.controller('MyCtrl',['$scope', '$filter', function ($scope, $filter) {
 $scope.labels = ["Medios", "Residencial", "Lotes", "Playa", "Comercial", "Oficinas", "Interés Social"];
   $scope.data = [23, 24, 2, 2, 2, 3, 8];
 
@@ -165,7 +161,7 @@ $scope.labels = ["Medios", "Residencial", "Lotes", "Playa", "Comercial", "Oficin
 
 
 //filter Multiple...
-fm1App.filter('filterMultiple',['$filter',function ($filter) {
+app.filter('filterMultiple',['$filter',function ($filter) {
   return function (items, keyObj) {
     var filterObj = {
               data:items,
@@ -207,7 +203,7 @@ fm1App.filter('filterMultiple',['$filter',function ($filter) {
   };
 }]);
 
-fm1App.filter('unique', function() {
+app.filter('unique', function() {
     return function(input, key) {
         var unique = {};
         var uniqueList = [];
