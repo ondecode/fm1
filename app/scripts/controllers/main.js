@@ -17,12 +17,11 @@ var fm1App = angular.module('fm1App', [
     'ngSanitize',
     'ngTouch',
     'ui.router',
-    'ngAnimate', 
     'mgcrea.ngStrap',
     'ui.select',
     'chart.js'
   ])
-  fm1App.controller('MainCtrl', function ($scope) {
+  fm1App.controller('MainCtrl',['$scope', 'filter', function ($scope, $filter) {
     var $ctrl = this;
 
     $ctrl.message = "Hello World!";
@@ -143,7 +142,7 @@ var fm1App = angular.module('fm1App', [
       }
     ];
     
-  });
+  }]);
 
 
 

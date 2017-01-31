@@ -1,28 +1,56 @@
 #ags, #bcn, #bcs, #cam, #chp, #chh, #coa, #col, #df, #dur, #gua, #gro, #hid, #jal, #mex, #mic, #mor,
 #nay, #nl, #oax, #pue, #que, #qro, #slp, #sin, #son, #tab, #tam, #tla, #ver, #yuc, #zac {
     display: none;
-    height: 400px;
+    /*height: 400px;
     overflow: auto;
     position: absolute;
     right: 0;
     top: 0;
     width: 370px;
+    margin: 50px -600px 0 -50px;
     margin-top: 50px;
-    /*margin: 50px -600px 0 -50px;*/
+    */
 }
 
-.borde{
-    width: 10px;
-    height: 510px;
-    background-color: #ea9847;
-    margin: 50px 0px 0px 800px;
-    /*margin: 50px -600px 0 -50px;*/
+@media (min-width: 768px){
+    #ags, #bcn, #bcs, #cam, #chp, #chh, #coa, #col, #df, #dur, #gua, #gro, #hid, #jal, #mex, #mic, #mor,
+    #nay, #nl, #oax, #pue, #que, #qro, #slp, #sin, #son, #tab, #tam, #tla, #ver, #yuc, #zac{
+        margin: 50px auto;
+        border-left: solid;
+        border-color: #ea9847;
+        border-width: 8px;
+    }
 }
 
+@media (max-width: 767px){
+    #ags, #bcn, #bcs, #cam, #chp, #chh, #coa, #col, #df, #dur, #gua, #gro, #hid, #jal, #mex, #mic, #mor,
+    #nay, #nl, #oax, #pue, #que, #qro, #slp, #sin, #son, #tab, #tam, #tla, #ver, #yuc, #zac{
+        border-top: solid;
+        border-color: #ea9847;
+        border-width: 8px;
+        margin: 0 auto;
+    }
+}
+
+.state-card{
+
+}
+
+.title{
+
+}
+
+.value{
+
+}
 h2{
     color: #5c3082;
+    font-family: Avenir-Regular;
+    margin-left: 10px;
 }
 
 p{
     color: #a5a5ae;
+    font-family: Avenir-Regular;
+    margin-left: 10px;
 }

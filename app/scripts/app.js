@@ -38,7 +38,7 @@ var app = angular.module('app', [
         controller: 'AboutCtrl'
       });
   });
-
+/*
   app.controller('MyCtrl',['$scope', '$filter', function ($scope, $filter) {
 $scope.labels = ["Medios", "Residencial", "Lotes", "Playa", "Comercial", "Oficinas", "Interés Social"];
   $scope.data = [23, 24, 2, 2, 2, 3, 8];
@@ -57,16 +57,10 @@ $scope.labels = ["Medios", "Residencial", "Lotes", "Playa", "Comercial", "Oficin
     };
 
   $scope.filterrange = function(item) {
-    /*
-    console.log('item.min_price: ' + item.min_price);
-    console.log('$scope.lower_price_bound: ' + $scope.lower_price_bound); */
     return (item.rangoprecio >= $scope.minRangeSlider.minValue && item.rangoprecio <= $scope.minRangeSlider.maxValue);
   };
 
   $scope.priceRange = function(item) {
-    /*
-    console.log('item.min_price: ' + item.min_price);
-    console.log('$scope.lower_price_bound: ' + $scope.lower_price_bound); */
     return (item.rangoprecio >= $scope.lower_price_bound && item.rangoprecio <= $scope.upper_price_bound);
   };
     $scope.test = "Yes";
@@ -216,3 +210,4 @@ app.filter('unique', function() {
         return uniqueList;
     };
 });
+*/
