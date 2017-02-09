@@ -175,11 +175,6 @@ aside {
     text-align: center;
     padding: 30px 0px; 
 }
-.sarahead{
-  background-image: url("../images/sarahead.JPG");
-  height: 150px;
-  background-size: cover;
-}
 .grayletter{
   color: #707070;
 }
@@ -377,8 +372,11 @@ bottom: 0px;}
 
 .selectBox{
     width:260px;
+    white-space: pre-wrap;
     background-color: white;
     color: black;
+    text-align: left;
+    font-size: 11px;
     
 }
 @media (min-width: 768px) {
@@ -419,9 +417,9 @@ bottom: 0px;}
 }
 .infoprg3{
   padding: 85px 0;
-  background-image: url("../images/portfolio/riscos.png");
+  background-image: url("../images/bgret.jpg");
   background-size: cover;
-  background-position-y: 485px;
+  background-attachment: fixed;
   text-align: center;
   letter-spacing: 3px;
   font-weight: 700;
@@ -444,19 +442,13 @@ bottom: 0px;}
   font-family: Avenir-Bold;
   font-size: 36px;
 }
-.sara{
-  background-color: #ededed;
-padding: 12px;
-font-weight: bold;
-}
-.sara div p{
-font-size: 11px;
-}
+
 .moreexp{
   padding: 85px 0;
-  background-image: url("../images/portfolio/25.jpg");
+  background-image: url("../images/orange.jpg");
   text-align: center;
   clear: left;
+  background-attachment: fixed;
 }
 .expletter{
     color: white;
@@ -478,7 +470,7 @@ font-size: 11px;
   letter-spacing: 1px;
 }
 .container-search{
-  padding: 0px 0px 50px;
+  padding: 25px 0px 0px;
   clear: left;
 }
 .brandpurple{
@@ -494,7 +486,7 @@ font-size: 11px;
 }
 .icons{
   padding: 70px 15px;
-  width: 15%;
+  width: 20%;
 }
 .pfooter{
   font-size: 15px;
@@ -613,7 +605,21 @@ input[type=submit] {
   .padd{
     padding: 40px 70px;
   }
+  @media (max-width: 991px) {
+    .icons{
+      width: 12%;
+    }
+  }
+  @media (max-width: 480px) {
+    .icons{
+      width: 20%!important;
+    }
+  }
+
   @media (max-width: 768px) {
+  .icons{
+      width: 13%;
+    }
     .chartsize{
   padding: 0px 0px;
 }
@@ -677,7 +683,7 @@ input[type=submit] {
 .navbar-center{
   float: none;
   margin: 0 auto;
-  width: 1203px; 
+  width: 840px; 
   }
 }
 @media (max-width: 768px) {
@@ -693,6 +699,11 @@ input[type=submit] {
     position: relative;
   }
 
+}
+@media (max-width: 992px) {
+.chartlittle{
+  padding: 15%
+}
 }
 /* fIN CAMBIOS fm1 */
 @media (min-width: 768px) {
@@ -747,7 +758,7 @@ header {
   background-size: cover;
   -o-background-size: cover;
   background-position: center;
-  background-image: url('../images/header.png');
+  background-image: url('../images/headernew.jpg');
   text-align: center;
   color: white;
 }
@@ -1449,4 +1460,132 @@ background-color:rgba(83,64,129, 0.8)}
   right: 24px;
   bottom: initial;
   left: initial;
+}
+
+/* Sara css */
+.scontent{
+  width: 70%; 
+  margin: 0 auto; 
+  background-color: #EDEDED;
+}
+.srel{
+  border-width: 0.5px; 
+  border-right: dashed; 
+  border-color: #939393;
+}
+.sloc{
+  border-top-left-radius: 10px; 
+  border-bottom-left-radius: 10px;
+}
+.sap{
+  border-top-right-radius: 10px; 
+  border-bottom-right-radius: 10px;
+}
+.stit{
+  color: gray; 
+  font-size: 11px;
+}
+.sinf{
+  color: #534081; 
+  font-size: 11px; 
+  font-weight: bold;
+}
+.scontinf{
+  width: 60%; 
+  margin: 0 auto; 
+  height: auto;
+  clear: both; 
+}
+.scolinf{
+  height: auto; 
+  background-color: #EDEDED; 
+  border-bottom: solid; 
+  border-color: #ea9847; 
+  border-width: 10px;
+}
+.snompro{
+  font-weight: bold; 
+  color: #534081; 
+  margin: 30px;
+}
+.spar{
+  margin: 30px;
+}
+.svista{
+  float: right; 
+  height: 672px; 
+  background-color: #EDEDED;
+}
+.svista img{
+  width: 105%;
+}
+.simg2{
+  margin-top: 10px; 
+  border-bottom: solid; 
+  border-color: #ea9847; 
+  border-width: 10px;
+}
+.scol-lg-5 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 20%;
+    float: left;
+    margin: 25px 0px 45px;
+    height: 80px;
+  }
+  .sarahead{
+  background-image: url("../images/bgxp.jpg");
+  height: 150px;
+  background-size: cover;
+}
+.sara{
+  background-color: #ededed;
+padding: 12px;
+font-weight: bold;
+}
+.sara div p{
+font-size: 11px;
+}
+.shdr{
+  text-align: center; 
+  transform: translateY(-50%); 
+  position: relative; top: 50%; 
+  color: white; 
+  font-family: Avenir-Bold; 
+  font-size: 27px; 
+  letter-spacing: 5px;
+}
+@media (max-width: 768px) {
+ .scontinf{
+  width: 100%;
+}
+.da-thumbs li {
+  padding: 8%;
+}
+.scol-lg-5 {
+    width: 20%;
+    margin: 0 auto;
+  } 
+  .sarahead{
+  background-repeat: no-repeat;
+  }
+  .svista img{
+  width: 50%;
+  float: right;
+}
+.scontent{
+  width: 100%; 
+}
+.element{
+  font-size: 30px;
+}
+.expletter{
+    font-size: 20px;
+    font-family: Avenir-Demi;
+    width: 82%;
+    margin: 0 auto;
+    line-height: 40px;
+}
 }

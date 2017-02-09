@@ -14,6 +14,7 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/rzslider.css" />
     <link rel="stylesheet" href="styles/mybootstrap.css">
     <link rel="stylesheet" href="styles/creative.css">
     <link rel="stylesheet" href="styles/map.styles.css">
@@ -51,7 +52,37 @@
       </div>
     </div> -->
 <div ng-app="app">
+<!--
     <header ng-include="'views/nav.html'"></header>
+    -->
+    <div class="header">
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    FM1 
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-center">
+                    <li><a class="page-scroll" ui-sref="main">NOSOTROS</a></li>
+                    <li><a class="page-scroll" href="#">¿PORQUÉ INVERTIR?</a></li>
+                    <li><a class="page-scroll" href="#services">Proyectos para invertir</a></li>
+                    <li><a class="page-scroll" ui-sref="about">Contacto</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+      </div> 
+        <!-- /.container-fluid -->
+  </nav> 
+</div> 
+<!-- fin header-->
+
+
 <div ui-view> </div>
     <footer ng-include="'views/footer.html'"></footer>
 </div>
@@ -101,25 +132,14 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
     
-        <script src="scripts/creative.js"></script>
         <script src="scripts/app.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/map.js"></script>
-        <script type="text/javascript" src="scripts/jquery.hoverdir.js"></script>
-    <script type="text/javascript">
-      $(function() {
-        $('#da-thumbs').each( function() { $(this).hoverdir(); } );
-      });
-    </script>
-    <script>
-  $(function(){
-      $(".element").typed({
-        strings: ["a través de la inversión en un fondo inmobiliario.", "Otro texto", "Texto final"],
-        typeSpeed: 0
-      });
-  });
-</script>
+        <script src="scripts/creative.js"></script>
+
+        <script src="scripts/jquery.hoverdir.js"></script>
+    
         <script src="scripts/controllers/sara.js"></script>
         <!-- endbuild -->
 </body>

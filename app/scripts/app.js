@@ -9,7 +9,8 @@
  * Main module of the application.
  */
 
-var app = angular.module('app', [
+angular
+.module('app', [
     'rzModule',
     'ngAnimate',
     'ngAria',

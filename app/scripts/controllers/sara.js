@@ -7,7 +7,7 @@
  * # SaraCtrl
  * Controller of the fm1App
  */
-angular.module('fm1App')
+angular.module('app')
   .controller('SaraCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
