@@ -12,6 +12,7 @@ var app = angular.module('app')
 
   $scope.labels = ["Medios", "Residencial", "Lotes", "Playa", "Comercial", "Oficinas", "Interés Social"];
     $scope.data = [23, 24, 2, 2, 2, 3, 8];
+    
     $scope.minRangeSlider = {
         minValue: 0,
         maxValue: 5000000,
