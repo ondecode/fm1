@@ -8,7 +8,7 @@
  * Controller of the fm1App
  */
 var app = angular.module('app')
-  app.controller('MainCtrl',['$scope', 'filter', function ($scope, $filter) {
+  app.controller('MainCtrl',['$scope', function ($scope) {
 
   $scope.labels = ["Medios", "Residencial", "Lotes", "Playa", "Comercial", "Oficinas", "Interés Social"];
     $scope.data = [23, 24, 2, 2, 2, 3, 8];
@@ -62,15 +62,6 @@ var app = angular.module('app')
         "link" : "torresandalucia.html"
       },
       {
-        "nombre" : "Sara Livings",
-        "locacion" : "Ciudad de México, México.",
-        "cantidad" : "220 apartamentos",
-        "tipopropiedad" : "Condominio",
-        "rangoprecio" : 1175000.00,
-        "img" : "/3.jpg",
-        "link" : "sara.html"
-      },
-      {
         "nombre" : "Terralta",
         "locacion" : "Querétaro, México.",
         "cantidad" : "310 apartamentos",
@@ -85,7 +76,7 @@ var app = angular.module('app')
         "cantidad" : "70 apartamentos",
         "tipopropiedad" : "Condominio",
         "rangoprecio" : 2895500.00,
-        "img" : "/47.jpg",
+        "img" : "/3.jpg",
         "link" : "Chapala.html"
       },
       {

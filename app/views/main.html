@@ -125,48 +125,43 @@
             </div>
         </section>  
 
-        <section class="infoprg4 col-sm-12 col-lg-12">
+        <section class="infoprg4 col-sm-12 col-lg-12" id="invertir">
                 <span class="prg4">Oportunidad en el Sector Inmobiliario</span><br>
-                <div style= "background-color: #E5E5E5; margin: 50px 0px;" class="col-sm-12 col-lg-6">
-                    
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 text-center">
+                <div style= "background-color: #E5E5E5; margin: 100px 0px;">
+                   
+                   <div>
+                        <div class="col-sm-6 col-lg-4 col-md-4 text-center">
                             <div class="service-box">
                                 <img id="tendence" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
                                 <p class="text-muted textdownop">Tendencias demográficas positivas.</p>
                             </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 text-center">
                             <div class="service-box">
                                 <img id="city" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
                                 <p class="text-muted textdownop">Ciudades con creciente desarrollo económico.</p>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6 text-center">
+                    <div class="col-sm-12 col-md-4 col-lg-4 chartlittle">
+                        <!--
+                                        <div class="chart-container" id="chart-container"></div>
+                        -->
+                    <canvas id="pie" class="chart chart-pie"
+                      chart-data="data" chart-labels="labels" chart-options="options">
+                    </canvas> 
+                
+                </div>
+                <div class="col-sm-6 col-lg-4 col-md-4 text-center">
                             <div class="service-box">
                                 <img id="demand" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
                                 <p class="text-muted textdownop">Demanda incremental de vivienda.</p>
                             </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 text-center">
                             <div class="service-box">
                                 <img id="finance" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
                                 <p class="text-muted textdownop">Mejores condiciones de financiamiento.</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-lg-6 chartsize">
-                <!--
-                                <div class="chart-container" id="chart-container"></div>
-                -->
-            <canvas id="pie" class="chart chart-pie"
-              chart-data="data" chart-labels="labels" chart-options="options">
-            </canvas> 
-                
-                </div>
-        </section>
-
+            </div>
+        </div>
+    </section>
      
 
     <div class="container-search">
@@ -176,7 +171,7 @@
 
     </div>
 
-        <section id="services">
+        <section id="services" style="padding: 0px;">
             <section class="no-padding" id="portfolio">
                 <div class="container-fluid">
                     <div class="row no-gutter popup-gallery">
@@ -186,16 +181,15 @@
 
 
                                 <li class="col-lg-4 col-sm-6" ng-repeat="proyecto in proyectos">
-                                    <a ng-click="id={{proyecto.id}}" ng-href="{{proyecto.link}}" id="da-thumbs" class="portfolio-box">
+                                    <a href="#contact" id="da-thumbs" class="portfolio-box ">
                                       <img ng-src="images/portfolio/{{proyecto.img}}" class="img-responsive">
-                                      <div><span><i class="fa fa-eye" aria-hidden="true"> Más Información</i></span></div>
+                                      <div><span><i class="fa fa-eye" aria-hidden="true"><p style="color: white; font-size: 14px;">Me interesa este proyecto</p></i></span></div>
                                     </a>
                                     <section class="infopro">
                                             <p class="descpro"><span class="nompro">{{proyecto.nombre}}</span><br>
                                             <span class="textgray">Ubicación: </span><span class="textdarkg">{{proyecto.locacion}}</span><br>
                                             <span class="textgray">Cantidad: </span><span class="textdarkg">{{proyecto.cantidad}}</span><br>
                                             <span class="textgray">Tipo de Propiedad: </span> <span class="textdarkg">{{proyecto.tipopropiedad}}</span><br>
-                                            <span class="textgray">Inversión: </span><span class="textorange">{{proyecto.rangoprecio | currency}}</span><br>
                                             </p>
                                            </section>
                                   </li>
@@ -204,24 +198,32 @@
                     </div>
                 </div>
             </section>
+            <!--
             <div class="text-center">
                 <a href="#" class="btn btn-primary btn-xl sr-button">Ver más</a>
-                </div><br><br>
+                </div><br><br> 
+                -->
         </section>
 
     <section class="infoprg5">
         Hablemos de tu inversión.<br>
-        <a href="#" class="btn btn-inv btn-xl sr-button">CONTACTARNOS</a>
+        <a href="#contact" class="btn btn-inv btn-xl sr-button">CONTACTARNOS</a>
     </section>
-
+<!--
     <section class="infoprg3" data-stellar-background-ratio="0.5">
         <span class="prg3"> <i class="fa fa-long-arrow-up" aria-hidden="true"></i>  RETORNO DE HASTA 18% ANUAL </span>
     </section>
+    -->
 
-    <section id="contact">
+     
+<span id="contact">
+    
+</span>
+    <section>
         <div class="container">
             <h3 class="contacta">Contáctanos.</h3>
                 <form action="action_page.php">
+                    <input type="text" name="propiedad" placeholder="Propiedad de Interés"> <br>
                     <input type="text" name="name" placeholder="Nombre"> <br>
                     <input type="text" name="email" placeholder="E-mail"> <br>
                     <input type="text" name="tel" placeholder="Teléfono"> <br>
