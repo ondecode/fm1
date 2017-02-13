@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the fm1App
  */
-angular.module('app')
+angular.module('fm1App')
   .controller('AboutCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

@@ -1,67 +1,4 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
-<style>
 
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
-body {
-  font-size: 15px;
-  font-family: 'Source Sans Pro', sans-serif;
-  color: #333;
-}
-
-path {
-  cursor: pointer;
-}
-
-form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto
-}
-
-input {
-  border: 1px dotted;
-  width: 50%;
-}
-
-#pieChart {
-  /* border: red 1px dotted; */
-  
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto
-}
-
-.text-container {
-  /* border: 1px dotted; */
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#segmentText {
-  width: 100%;
-  padding: 20px;
-  text-align: centre;
-}
-
-</style>
-<body>
-<script src="//d3js.org/d3.v3.min.js"></script>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-6" id="pieChart"></div>
-    <div id="pieText" class="col-sm-6 text-container">
-      <h1 id="segmentTitle">Select Segment</h1>
-      <p id="segmentText">Lots of text...</p>
-    </div>
-  </div>
-</div>
-<script>
 var data_V1 = [{
   "Type": "A",
   "Amount": 250,
@@ -154,6 +91,3 @@ var g = svg.selectAll("path")
   });
 
 document.querySelector('style').textContent += '@media(max-width:767px) {#pieChart { transform: rotate(90deg); transform-origin: 50% 50%; transition: 1s; max-width: 50%; } .text-container { width: 100%; min-height: 0; }} @media(min-width:768px) {#pieChart { transition: 1s;}}'
-</script>
-</body>
-</html>

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/angularjs-slider/dist/rzslider.css" />
     <link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.css" />
+    <link rel="stylesheet" href="bower_components/nvd3/build/nv.d3.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -52,7 +53,7 @@
         </div>
       </div>
     </div> -->
-<div ng-app="app">
+<div ng-app="fm1App">
 <!--
     <header ng-include="'views/nav.html'"></header>
     -->
@@ -70,10 +71,10 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-center">
-                    <li><a class="page-scroll" ui-sref="main">NOSOTROS</a></li>
-                    <li><a class="page-scroll" href="#">¿PORQUÉ INVERTIR?</a></li>
+                    <li><a class="page-scroll" href="#about2">NOSOTROS</a></li>
+                    <li><a class="page-scroll" href="#invertir">¿PORQUÉ INVERTIR?</a></li>
                     <li><a class="page-scroll" href="#services">Proyectos para invertir</a></li>
-                    <li><a class="page-scroll" ui-sref="about">Contacto</a></li>
+                    <li><a class="page-scroll" href="#contact">Contacto</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -128,20 +129,24 @@
     <script src="bower_components/scrollreveal/dist/scrollreveal.js"></script>
     <script src="bower_components/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
     <script src="bower_components/jquery.easing/js/jquery.easing.js"></script>
+    <script src="bower_components/d3/d3.js"></script>
+    <script src="bower_components/nvd3/build/nv.d3.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    
+        <script src="//d3js.org/d3.v3.min.js"></script>
         <script src="scripts/app.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/creative.js"></script>
-
+        <script src="scripts/piechart.js"></script>
         <script src="scripts/jquery.hoverdir.js"></script>
     
         <script src="scripts/controllers/sara.js"></script>
+        <script src="scripts/directives/mapa.js"></script>
+        <script src="scripts/services/mapasvg.js"></script>
         <!-- endbuild -->
 </body>
 </html>

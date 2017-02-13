@@ -45,6 +45,8 @@ module.exports = function(config) {
       'bower_components/scrollreveal/dist/scrollreveal.js',
       'bower_components/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js',
       'bower_components/jquery.easing/js/jquery.easing.js',
+      'bower_components/d3/d3.js',
+      'bower_components/nvd3/build/nv.d3.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

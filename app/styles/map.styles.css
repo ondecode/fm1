@@ -1,56 +1,56 @@
-#ags, #bcn, #bcs, #cam, #chp, #chh, #coa, #col, #df, #dur, #gua, #gro, #hid, #jal, #mex, #mic, #mor,
-#nay, #nl, #oax, #pue, #que, #qro, #slp, #sin, #son, #tab, #tam, #tla, #ver, #yuc, #zac {
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+.state-card {
     display: none;
-    /*height: 400px;
-    overflow: auto;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 370px;
-    margin: 50px -600px 0 -50px;
-    margin-top: 50px;
-    */
 }
 
 @media (min-width: 768px){
-    #ags, #bcn, #bcs, #cam, #chp, #chh, #coa, #col, #df, #dur, #gua, #gro, #hid, #jal, #mex, #mic, #mor,
-    #nay, #nl, #oax, #pue, #que, #qro, #slp, #sin, #son, #tab, #tam, #tla, #ver, #yuc, #zac{
+   .state-card{
         margin: 50px auto;
         border-left: solid;
         border-color: #ea9847;
         border-width: 8px;
     }
+    .infoedo{
+        max-height: 300px; 
+    }
+    .excedente{
+        max-height: 150px;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
 }
 
 @media (max-width: 767px){
-    #ags, #bcn, #bcs, #cam, #chp, #chh, #coa, #col, #df, #dur, #gua, #gro, #hid, #jal, #mex, #mic, #mor,
-    #nay, #nl, #oax, #pue, #que, #qro, #slp, #sin, #son, #tab, #tam, #tla, #ver, #yuc, #zac{
+    .state-card{
         border-top: solid;
         border-color: #ea9847;
         border-width: 8px;
         margin: 0 auto;
     }
+    .infoedo{
+        max-height: 400px; 
+    }
+    .excedente{
+        max-height: 200px;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
 }
 
-.state-card{
-
-}
-
-.title{
-
-}
-
-.value{
-
-}
-h2{
+h2.nomedo{
     color: #5c3082;
-    font-family: Avenir-Regular;
-    margin-left: 10px;
-}
-
-p{
-    color: #a5a5ae;
     font-family: Avenir-Regular;
     margin-left: 10px;
 }

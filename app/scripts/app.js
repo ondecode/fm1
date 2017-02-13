@@ -10,7 +10,7 @@
  */
 
 angular
-.module('app', [
+.module('fm1App', [
     'rzModule',
     'ngAnimate',
     'ngAria',
