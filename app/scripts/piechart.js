@@ -1,4 +1,3 @@
-
 var data_V1 = [{
   "Type": "A",
   "Amount": 250,
