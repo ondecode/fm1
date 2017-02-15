@@ -150,6 +150,12 @@ aside {
 }
 
 /* Cambios FM1 */
+.transstext{
+  transform: translateY(50%);
+}
+.transfchart{
+  transform: translate(-25%, -40%);
+}
 .element{
   font-weight: 700;
   margin-top: 0;
@@ -618,6 +624,12 @@ input[type=submit] {
   }
 
   @media (max-width: 768px) {
+    .transstext{
+  transform: translateY(50%);
+}
+.transfchart{
+  transform: translate(-25%, -40%);
+}
   .icons{
       width: 13%;
     }

@@ -43,7 +43,7 @@ angular.module('fm1App')
 		  types = [];
 		  for (var i = 0; i < obj.length; i++) {
 		    types.push(obj[i].Type);
-		  }
+		  };
 		  return types
 		};
 		var arcOver = d3.svg.arc()

@@ -17,7 +17,7 @@ angular.module('fm1App')
     template: '<div id="{{scope.id}}"></div>',
     link: function (scope, element, attrs) {
       //Prepare map attributes
-      scope.estados = [
+    scope.estados = [
       {
         "id": "ags",
         "nom": "Aguascalientes"
@@ -58,9 +58,10 @@ angular.module('fm1App')
         "id": "pue",
         "nom": "Puebla"
       }
-      ];
-      window.onload = function () {
+    ];
+      $(function() { 
         var R = Raphael(scope.id);
+        console.log('hola');
         R.setViewBox(0, 0, 800, 600, true);
         R.setSize('100%', '100%');
         var attr = {
@@ -77,7 +78,6 @@ angular.module('fm1App')
           "stroke-width": 1,
           "stroke-linejoin": "round"
         }
-        
         var mex = {};
         var pais = mapaSVG.getMapName('mex');
 
@@ -161,10 +161,11 @@ angular.module('fm1App')
                 }
               }
             };
-            //que cuando recién cargue la página, que coloree a Aguascalientes
+            //que cuando recién cargue la página, que coloree a df
             if (estado == "df") {
               edo[0].onmouseover();
             }
+
             //animación al darle click
             edo[0].onclick = function () {
               if (proys[estado]) {
@@ -185,9 +186,10 @@ angular.module('fm1App')
                 }
               }                       
             };
+
           })(mex[estado], estado);
         }
-      };
-    }
-  };
-}]);
+      }); // $(function)
+    } //link function
+  }; // return
+}]); //termina la directiva

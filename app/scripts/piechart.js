@@ -1,20 +1,32 @@
 var data_V1 = [{
-  "Type": "A",
-  "Amount": 250,
-  "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent rutrum metus vel odio convallis condimentum. Integer ullamcorper ipsum vel dui varius congue. Nulla facilisi. Morbi molestie tortor libero, ac placerat urna mollis ac. Vestibulum id ipsum mauris."
+  "Type": "Medio",
+  "Amount": 23,
+  "Description": ""
 }, {
-  "Type": "B",
-  "Amount": 1000,
-  "Description": "In hac habitasse platea dictumst. Curabitur lacus neque, congue ac quam a, sagittis accumsan mauris. Suspendisse et nisl eros. Fusce nulla mi, tincidunt non faucibus vitae, aliquam vel dolor. Maecenas imperdiet, elit eget condimentum fermentum, sem lorem fringilla felis, vitae cursus lorem elit in risus."
+  "Type": "Residencial",
+  "Amount": 24,
+  "Description": ""
 }, {
-  "Type": "C",
-  "Amount": 600,
-  "Description": "Aenean faucibus, risus sed eleifend rutrum, leo diam porttitor mauris, a eleifend ipsum ipsum ac ex. Nam scelerisque feugiat augue ac porta. Morbi massa ante, interdum sed nulla nec, finibus cursus augue. Phasellus nunc neque, blandit a nunc ut, mattis elementum arcu."
+  "Type": "Lotes",
+  "Amount": 2,
+  "Description": ""
 }, {
-  "Type": "D",
-  "Amount": 1750,
-  "Description": "Aenean tellus felis, finibus eget placerat nec, ultrices vel elit. Morbi viverra mi ac ornare euismod. Quisque ultrices id nibh aliquam bibendum. Morbi id tortor non magna dictum suscipit. Nunc dolor metus, aliquam vitae felis id, euismod vulputate metus."
-}];
+  "Type": "Playa",
+  "Amount": 2,
+  "Description": ""
+},{
+  "Type": "Comercial",
+  "Amount": 2,
+  "Description": ""
+},{
+  "Type": "Oficinas",
+  "Amount": 3,
+  "Description": ""
+},{
+  "Type": "Interés Social",
+  "Amount": 8,
+  "Description": ""
+  }];
 
 var width = parseInt(d3.select('#pieChart').style('width'), 10);
 var height = width;
@@ -50,6 +62,7 @@ var pie = d3.layout.pie()
 
 change = function(d, i) {
   var angle = 90 - ((d.startAngle * (180 / Math.PI)) + ((d.endAngle - d.startAngle) * (180 / Math.PI) / 2))
+  console.log("angle", angle);
   svg.transition()
     .duration(1000)
     .attr("transform", "translate(" + radius + "," + height / 2 + ") rotate(" + angle + ")")
@@ -60,6 +73,7 @@ change = function(d, i) {
     .transition()
     .duration(1000)
     .attr("d", arcOver)
+  console.log("Arc Finished")
 };
 
 var svg = d3.select("#pieChart").append("svg")
