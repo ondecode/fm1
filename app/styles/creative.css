@@ -150,11 +150,14 @@ aside {
 }
 
 /* Cambios FM1 */
+.clearfix { display:inline-block; }
+.clearfix:after {content:".";display:block; height:0;clear:both;visibility:hidden;}
+
 .transstext{
   transform: translateY(50%);
 }
 .transfchart{
-  transform: translate(-25%, -40%);
+  transform: translate(-25%, -25%);
 }
 .element{
   font-weight: 700;
@@ -450,12 +453,11 @@ bottom: 0px;}
 }
 
 .moreexp{
-  padding: 85px 0;
+  padding: 85px 0px 0px;
   background-image: url("../images/orange.jpg");
   text-align: center;
   clear: left;
   background-attachment: fixed;
-  height: 400px;
 }
 .expletter{
     color: white;
@@ -567,6 +569,16 @@ form{
     box-sizing: border-box;
     background-color: #D7D7D7;
 }
+input[type=email], select {
+    width: 45%;
+    color: white;
+    padding: 7px 20px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #D7D7D7;
+    box-sizing: border-box;
+    background-color: #D7D7D7;
+}
 .optsel{
   width: 80%;
   background-color: white;
@@ -624,11 +636,14 @@ input[type=submit] {
   }
 
   @media (max-width: 768px) {
+    .moreexp{
+  padding: 0px;
+}
     .transstext{
-  transform: translateY(50%);
+  transform: translateY(0%);
 }
 .transfchart{
-  transform: translate(-25%, -40%);
+  transform: translate(0%, 0%);
 }
   .icons{
       width: 13%;
@@ -648,6 +663,9 @@ input[type=submit] {
      input[type=text], select {
     width: 80%;
 }
+ input[type=email], select {
+      width: 80%;
+    }
    textarea {
     width: 80%;
 }

@@ -5,11 +5,13 @@ Highcharts.chart('container', {
         backgroundColor: 'transparent',
         plotShadow: false
     },
+
     title: {
-        text: 'Inventario<br>por tipo<br>de proyecto',
+        text: 'Inventario por tipo de proyecto',
         align: 'center',
+        fontFamily: 'Avenir-Bold',
         verticalAlign: 'middle',
-        y: 80
+        y: -128
     },
     credits:{
     enabled: false
@@ -21,7 +23,7 @@ Highcharts.chart('container', {
         pie: {
             dataLabels: {
                 enabled: true,
-                distance: -50,
+                distance: -30,
                 style: {
                     fontWeight: 'bold',
                     color: 'white'

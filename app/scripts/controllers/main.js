@@ -10,10 +10,10 @@
 angular.module('fm1App')
   .controller('MainCtrl',['$scope', '$filter','$http','mapaSVG' , function ($scope, $filter,$http, mapaSVG) {
 
-    $scope.widget = {title: ''};
+    $scope.user = {propiedad: ''};
         
         $scope.set = function(new_title) {
-            this.widget.title = new_title;
+            this.user.propiedad = new_title;
         }
 
   $scope.labels = ["Medios", "Residencial", "Lotes", "Playa", "Comercial", "Oficinas", "Interés Social"];

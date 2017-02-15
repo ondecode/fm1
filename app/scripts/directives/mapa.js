@@ -61,7 +61,6 @@ angular.module('fm1App')
     ];
       $(function() { 
         var R = Raphael(scope.id);
-        console.log('hola');
         R.setViewBox(0, 0, 800, 600, true);
         R.setSize('100%', '100%');
         var attr = {
