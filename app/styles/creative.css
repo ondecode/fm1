@@ -101,7 +101,8 @@ aside {
   padding: 0;
 }
 .navbar-brand{
-  padding: 0px 15px;
+  padding: 8px 15px;
+  height: 85px;
 }
 .navbar-default {
   background-color: white;
