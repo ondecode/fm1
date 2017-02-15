@@ -235,7 +235,22 @@
 
 </div>
 
+<script>
+              $(document).ready(function()
+              {
+              $("#sendform").click(function(){
+                      $.post("http://ondecode-mailer.herokuapp.com/contact", {
+                      propiedad: $('#propiedadInput').val(),
+                      name: $('#nameInput').val(),
+                      email: $('#emailInput').val(),
+                      phone: $('#phoneInput').val(),
+                      message: $('#messageInput').val()
+              });
+                      $("#Formulario1")[0].reset();
 
+              });
+              });
+            </script>
 <script>
   $(function(){
       $(".element").typed({
