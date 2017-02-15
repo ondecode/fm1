@@ -1,0 +1,56 @@
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+.state-card {
+    display: none;
+}
+
+@media (min-width: 768px){
+   .state-card{
+        margin: 50px auto;
+        border-left: solid;
+        border-color: #ea9847;
+        border-width: 8px;
+    }
+    .infoedo{
+        max-height: 300px; 
+    }
+    .excedente{
+        max-height: 150px;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+}
+
+@media (max-width: 767px){
+    .state-card{
+        border-top: solid;
+        border-color: #ea9847;
+        border-width: 8px;
+        margin: 0 auto;
+    }
+    .infoedo{
+        max-height: 400px; 
+    }
+    .excedente{
+        max-height: 200px;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+}
+
+h2.nomedo{
+    color: #5c3082;
+    font-family: Avenir-Regular;
+    margin-left: 10px;
+}
