@@ -466,7 +466,7 @@ bottom: 0px;}
     font-family: Avenir-Demi;
     width: 70%;
     margin: 0 auto;
-    transform: translateY(60%);
+    transform: translateY(90%);
 }
 .btn-inv {
   color: white;
@@ -1616,7 +1616,7 @@ font-size: 11px;
     width: 82%;
     margin: 0 auto;
     line-height: 40px;
-    transform: translateY(0%);
+    transform: translateY(10%);
 }
 }
 
