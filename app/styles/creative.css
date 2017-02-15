@@ -100,6 +100,9 @@ aside {
 .no-padding {
   padding: 0;
 }
+.navbar-brand{
+  padding: 0px 15px;
+}
 .navbar-default {
   background-color: white;
   border-color: transparent;
@@ -455,16 +458,14 @@ bottom: 0px;}
   background-image: url("../images/orange.jpg");
   text-align: center;
   clear: left;
-  background-attachment: fixed;
 }
 .expletter{
     color: white;
-    font-size: 26px;
+    font-size: 18px;
     font-family: Avenir-Demi;
     width: 70%;
     margin: 0 auto;
-    line-height: 40px;
-
+    transform: translateY(60%);
 }
 .btn-inv {
   color: white;
@@ -1614,6 +1615,7 @@ font-size: 11px;
     width: 82%;
     margin: 0 auto;
     line-height: 40px;
+    transform: translateY(0%);
 }
 }
 

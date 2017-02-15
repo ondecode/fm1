@@ -1,5 +1,11 @@
+Highcharts.setOptions({
+     colors: ['#5C3082', '#7CB5EC', '#E4D354', '#F15C80', '#8085E9', '#90ED7D', '#FA7548', '#6AF9C4']
+    });
 Highcharts.chart('container', {
     chart: {
+        style: {
+            fontFamily: 'Avenir-Demi'
+        },
         plotBackgroundColor: null,
         plotBorderWidth: 0,
         backgroundColor: 'transparent',
@@ -9,9 +15,11 @@ Highcharts.chart('container', {
     title: {
         text: 'Inventario por tipo de proyecto',
         align: 'center',
-        fontFamily: 'Avenir-Bold',
         verticalAlign: 'middle',
-        y: -128
+        y: -128,
+         style: {
+            color: '#171D31'
+        }
     },
     credits:{
     enabled: false
@@ -21,13 +29,10 @@ Highcharts.chart('container', {
     },
     plotOptions: {
         pie: {
+            borderColor: 'null',
+            allowPointSelect: false,
             dataLabels: {
-                enabled: true,
-                distance: -30,
-                style: {
-                    fontWeight: 'bold',
-                    color: 'white'
-                }
+                enabled: false
             },
             startAngle: -180,
             endAngle: 180,
@@ -37,7 +42,7 @@ Highcharts.chart('container', {
     series: [{
         type: 'pie',
         name: 'Proyectos',
-        innerSize: '50%',
+        innerSize: '75%',
         data: [
             ['Medio',   23],
             ['Residencial', 24],

@@ -50,61 +50,52 @@
  
 <section class="moreexp clearfix" data-stellar-background-ratio="0.5">
             <div class="col-xs-12 col-sm-8 col-lg-8">
-                <h5 class="expletter">El equipo cuenta con una sólida trayectoria en el mercado inmobiliario mexicano por más de 45 años, con desarrollos a lo largo de <span style="color: black; font-family: Avenir-Bold;">10 estados del país.</span></h5>
+                <p class="expletter">El equipo cuenta con una sólida trayectoria en el mercado inmobiliario mexicano por más de 45 años, con desarrollos a lo largo de <span style="color: black; font-family: Avenir-Bold;">10 estados del país.</span></p>
 
             </div>
                     <div class="col-xs-12 col-sm-4 col-lg-4 transfchart">
-                    <div id="container" style="min-width: 290px; height: 330px; max-width: 300px; margin: 0 auto"></div>
-
-<!--                
-                        <div class="col-sm-12" id="pieChart"></div>
-                        <div id="pieText" class="col-sm-12 text-container">
-                          <h1 id="segmentTitle">Seleccione un segmento</h1>
-                        </div>
-                    -->
+                    <div id="container" style="min-width: 200px; height: 360px; max-width: 300px; margin: 0 auto"></div>
                     </div> 
     </section>
 
-        <section>
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <mapa id="lienzo"></mapa>
-            </div>        
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" ng-repeat="edo in estados">
-                <div class="state-card" id="{{edo.id}}">
-                        <div class="state-image">
-                            <h2>{{edo.nom}}</h2>
-                        </div>
-                        <div class="infoedo">
-                            <div ng-repeat="owner in owners">
-                            <div ng-class="getProjects(edo.id, owner.id).length>3 ? 'excedente' : 'tabla'">
-                            <table class="table" >
-                                <thead>
-                                    <tr>
-                                        <th colspan="3">{{ owner.name }}</th>
-                                    </tr>
-                                    <tr>
-                                        <th>Proyecto</th>
-                                        <th>Cantidad</th>
-                                        <th>Tipo de inmueble</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr ng-if="getProjects(edo.id, owner.id).length <1">
-                                        <td colspan="3">No hay proyectos</td>
-                                    </tr>
-                                    <tr ng-repeat="m in getProjects(edo.id, owner.id)">
-                                        <td>{{ m.proyecto }}</td>
-                                        <td>{{ m.cantidad | number }}</td>
-                                        <td>{{ m.tipoinmueble }}</td>
-                                    </tr>
-                                </tbody>
-                            </table>                 
-                            </div>
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section>
+  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+    <mapa id="lienzo"></mapa>
+  </div>        
+  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" ng-repeat="edo in estados">
+    <div class="state-card" id="{{edo.id}}">
+      <h2 class="nomedo">{{edo.nom}}</h2>
+      <div class="infoedo">
+        <div ng-repeat="owner in owners" ng-init="edo.projects[owner.id] = getProjects(edo.id, owner.id)">
+          <div ng-class="{ 'excedente' : edo.projects[owner.id].length > 3 }">
+            <table class="table">          
+              <thead>
+                <tr>
+                  <th colspan="3">{{ owner.name }}</th>
+                </tr>
+                <tr ng-if="edo.projects[owner.id].length >= 1">
+                  <th>Proyecto</th>
+                  <th>Cantidad</th>
+                  <th>Tipo de inmueble</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-if="edo.projects[owner.id].length < 1">
+                  <td colspan="3">No hay proyectos</td>
+                </tr>
+                <tr ng-repeat="m in edo.projects[owner.id]">
+                  <td>{{ m.proyecto }}</td>
+                  <td>{{ m.cantidad | number }}</td>
+                  <td>{{ m.tipoinmueble }}</td>
+                </tr>
+              </tbody>
+            </table>                
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
         <section class="infoprg4 col-sm-12 col-lg-12" id="invertir">
                 <span class="prg4">Oportunidad en el Sector Inmobiliario</span><br>
