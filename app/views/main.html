@@ -140,14 +140,14 @@
     </section>
      
 
-    <div class="container-search">
+    <div  id="services" class="container-search">
         <section class="empiezainv">
             <h1>EMPIEZA A INVERTIR</h1>
         </section>
 
     </div>
 
-        <section id="services" style="padding: 0px;">
+        <section style="padding: 0px;">
             <section class="no-padding" id="portfolio">
                 <div class="container-fluid">
                     <div class="row no-gutter popup-gallery">
@@ -188,43 +188,35 @@
             <h3 class="contacta">Contáctanos.</h3>
         <form name="userForm" ng-submit="submitForm()" id="Formulario1" method="post" novalidate>
         <!-- Propiedad de interés -->
-        <div ng-class="{ 'has-error' : userForm.propiedad.$invalid && !userForm.propiedad.$touched }">
+        <div ng-class="{ 'has-error' : userForm.propiedad.$invalid && !userForm.propiedad.$pristine }">
             <input type="text" name="propiedad" ng-model="user.propiedad" id="propiedadInput" placeholder="Proyecto" required>
-            <p ng-show="userForm.propiedad.$invalid && !userForm.propiedad.$touched" class="help-block">Proyecto</p>
+            <p ng-show="userForm.propiedad.$invalid && !userForm.propiedad.$untouched" class="help-block">Proyecto</p>
         </div>
 
         <!-- Nombre -->
-        <div ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$touched }">
+        <div ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
             <input type="text" name="name" ng-model="user.name" id="nameInput" placeholder="Tu nombre" required="required">
-            <p ng-show="userForm.name.$invalid && !userForm.name.$touched" class="help-block">Favor de ingresar su nombre</p>
+            <p ng-show="userForm.name.$invalid && !userForm.name.$untouched" class="help-block">Favor de ingresar su nombre</p>
         </div>
       
         
         <!-- EMAIL -->
-        <div ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$touched }">
+        <div ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
             <input type="email" name="email" ng-model="user.email" id="emailInput" placeholder="E-mail" required="required">
-            <p ng-show="userForm.email.$invalid && !userForm.email.$touched" class="help-block">Favor de ingresar un e-mail válido</p>
+            <p ng-show="userForm.email.$invalid && !userForm.email.$untouched" class="help-block">Favor de ingresar un e-mail válido</p>
         </div>
         
         <!-- Tel -->
         <div ng-class="{ 'has-error' : userForm.tel.$invalid && !userForm.tel.$pristine }">
             <input type="text" name="tel" ng-model="user.tel" id="phoneInput" placeholder="Teléfono" required="required" numeric-only>
-            <p ng-show="userForm.tel.$invalid && !userForm.tel.$pristine" class="help-block">Favor de ingresar un teléfono</p>
+            <p ng-show="userForm.tel.$invalid && !userForm.tel.$untouched" class="help-block">Favor de ingresar un teléfono</p>
         </div>
 
         <!-- Mensaje -->
         <div ng-class="{ 'has-error' : userForm.mensaje.$invalid && !userForm.mensaje.$pristine }">
         <textarea name="mensaje" id="messageInput" placeholder="Mensaje" required="required"></textarea>
-        <p ng-show="userForm.mensaje.$invalid && !userForm.mensaje.$pristine" class="help-block">Escribe un mensaje</p>
+        <p ng-show="userForm.mensaje.$invalid && !userForm.mensaje.$untouched" class="help-block">Escribe un mensaje</p>
         </div>
-
-        <!-- USERNAME 
-        <div ng-class="{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }">
-            <input type="text" name="username" ng-model="user.username" ng-minlength="3" ng-maxlength="8" placeholder="username" required="required">
-            <p ng-show="userForm.username.$error.minlength" class="help-block">Username is too short.</p>
-            <p ng-show="userForm.username.$error.maxlength" class="help-block">Username is too long.</p>
-        </div>
-        -->
 
 
         <input type="submit" class="btn btn-inv btn-xl sr-button" id="sendform" ng-disabled="userForm.$invalid"></button>
@@ -234,8 +226,8 @@
     </section>
 
 </div>
-
-<script>
+<!-- enviar email -->
+                <script>
               $(document).ready(function()
               {
               $("#sendform").click(function(){
@@ -251,6 +243,8 @@
               });
               });
             </script>
+            <!-- enviar email -->
+
 <script>
   $(function(){
       $(".element").typed({
